@@ -1,3 +1,4 @@
-my_list = [5, True, 'test', 5.53]
-for x in my_list:
-    print(type(x))
+import sys
+production, rate, bonus = sys.argv[1:]
+ZP = int(production) * int(rate) + int(bonus)
+print(f' Заработная плата: {ZP}')
