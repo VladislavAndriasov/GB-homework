@@ -1,8 +1,11 @@
-my_list = input('Enter elements in list separated by a space : ').split()
-element = len(my_list)
-i = 0
-while i < element:
-    temp = my_list.pop(i)
-    my_list.insert(i + 1, temp)
-    i += 2
-print(my_list)
+with open('test.txt') as text:
+    string_num = 0
+    for i in enumerate(text):
+        i = list(i)
+        string_num += 1
+        i.pop(0)
+        for u in i:
+            y = u.split()
+            o = len(y)
+            print(f'Длина {string_num} строки {o}')
+    print(f'Кол-во строк: {string_num}')

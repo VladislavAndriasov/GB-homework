@@ -1,3 +1,4 @@
-my_list = [5, True, 'test', 5.53]
-for x in my_list:
-    print(type(x))
+with open('test.txt', 'w') as text:
+    while True:
+        text.write(input('Enter text: ') + '\n')
+        continue
