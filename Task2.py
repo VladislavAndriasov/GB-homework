@@ -1,8 +1,27 @@
-my_list = input('Enter elements in list separated by a space : ').split()
-element = len(my_list)
-i = 0
-while i < element:
-    temp = my_list.pop(i)
-    my_list.insert(i + 1, temp)
-    i += 2
-print(my_list)
+from abc import ABC, abstractmethod
+
+
+class Clothes(ABC):
+
+    def __init__(self, name):
+        self.name = name
+
+
+class Coat(Clothes):
+
+    @property
+    def consumption(self):
+        return f'Для пошива пальто нужно: {self.name / 6.5 + 0.5 :.2f} ткани'
+
+
+class Costume(Clothes):
+
+    @property
+    def consumption(self):
+        return f'Для пошива костюма нужно: {2 * self.name + 0.3 :.2f} ткани'
+
+
+coat = Coat(400.0)
+costume = Costume(55)
+print(coat.consumption)
+print(costume.consumption)
